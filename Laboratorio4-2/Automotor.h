@@ -36,21 +36,31 @@ namespace Laboratorio42 {
 		}
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label7;
-	private: System::Windows::Forms::DateTimePicker^ dateTimePicker2;
+	private: System::Windows::Forms::DateTimePicker^ fechaFinTramAuto;
+
 	private: System::Windows::Forms::Label^ label6;
-	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::TextBox^ valorTramAuto;
+
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::ComboBox^ comboBox3;
-	private: System::Windows::Forms::ComboBox^ comboBox2;
-	private: System::Windows::Forms::Button^ button3;
-	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::Windows::Forms::ComboBox^ juzgadoTramAuto;
+
+	private: System::Windows::Forms::ComboBox^ jurisdiccionTramAuto;
+
+	private: System::Windows::Forms::Button^ btnTramAutoEliminar;
+
+	private: System::Windows::Forms::Button^ btnTramAutoEditar;
+
+	private: System::Windows::Forms::Button^ btnTramAutoGuardar;
+	private: System::Windows::Forms::DataGridView^ vistaTramAuto;
+
+
 	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::DateTimePicker^ dateTimePicker1;
+	private: System::Windows::Forms::DateTimePicker^ fechaInicioTramAuto;
+
 	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::ComboBox^ comboBox1;
+	private: System::Windows::Forms::ComboBox^ IDCliTramAuto;
+
 	protected:
 
 	private:
@@ -68,22 +78,22 @@ namespace Laboratorio42 {
 		{
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->dateTimePicker2 = (gcnew System::Windows::Forms::DateTimePicker());
+			this->fechaFinTramAuto = (gcnew System::Windows::Forms::DateTimePicker());
 			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->valorTramAuto = (gcnew System::Windows::Forms::TextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
-			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->juzgadoTramAuto = (gcnew System::Windows::Forms::ComboBox());
+			this->jurisdiccionTramAuto = (gcnew System::Windows::Forms::ComboBox());
+			this->btnTramAutoEliminar = (gcnew System::Windows::Forms::Button());
+			this->btnTramAutoEditar = (gcnew System::Windows::Forms::Button());
+			this->btnTramAutoGuardar = (gcnew System::Windows::Forms::Button());
+			this->vistaTramAuto = (gcnew System::Windows::Forms::DataGridView());
 			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
+			this->fechaInicioTramAuto = (gcnew System::Windows::Forms::DateTimePicker());
 			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			this->IDCliTramAuto = (gcnew System::Windows::Forms::ComboBox());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->vistaTramAuto))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// label1
@@ -104,12 +114,12 @@ namespace Laboratorio42 {
 			this->label7->TabIndex = 33;
 			this->label7->Text = L"Fecha finalización";
 			// 
-			// dateTimePicker2
+			// fechaFinTramAuto
 			// 
-			this->dateTimePicker2->Location = System::Drawing::Point(162, 149);
-			this->dateTimePicker2->Name = L"dateTimePicker2";
-			this->dateTimePicker2->Size = System::Drawing::Size(200, 20);
-			this->dateTimePicker2->TabIndex = 32;
+			this->fechaFinTramAuto->Location = System::Drawing::Point(162, 149);
+			this->fechaFinTramAuto->Name = L"fechaFinTramAuto";
+			this->fechaFinTramAuto->Size = System::Drawing::Size(200, 20);
+			this->fechaFinTramAuto->TabIndex = 32;
 			// 
 			// label6
 			// 
@@ -120,12 +130,12 @@ namespace Laboratorio42 {
 			this->label6->TabIndex = 31;
 			this->label6->Text = L"Valor";
 			// 
-			// textBox1
+			// valorTramAuto
 			// 
-			this->textBox1->Location = System::Drawing::Point(16, 149);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(121, 20);
-			this->textBox1->TabIndex = 30;
+			this->valorTramAuto->Location = System::Drawing::Point(16, 149);
+			this->valorTramAuto->Name = L"valorTramAuto";
+			this->valorTramAuto->Size = System::Drawing::Size(121, 20);
+			this->valorTramAuto->TabIndex = 30;
 			// 
 			// label5
 			// 
@@ -145,59 +155,59 @@ namespace Laboratorio42 {
 			this->label4->TabIndex = 28;
 			this->label4->Text = L"Jurisdicción";
 			// 
-			// comboBox3
+			// juzgadoTramAuto
 			// 
-			this->comboBox3->FormattingEnabled = true;
-			this->comboBox3->Location = System::Drawing::Point(162, 101);
-			this->comboBox3->Name = L"comboBox3";
-			this->comboBox3->Size = System::Drawing::Size(121, 21);
-			this->comboBox3->TabIndex = 27;
+			this->juzgadoTramAuto->FormattingEnabled = true;
+			this->juzgadoTramAuto->Location = System::Drawing::Point(162, 101);
+			this->juzgadoTramAuto->Name = L"juzgadoTramAuto";
+			this->juzgadoTramAuto->Size = System::Drawing::Size(121, 21);
+			this->juzgadoTramAuto->TabIndex = 27;
 			// 
-			// comboBox2
+			// jurisdiccionTramAuto
 			// 
-			this->comboBox2->FormattingEnabled = true;
-			this->comboBox2->Location = System::Drawing::Point(16, 101);
-			this->comboBox2->Name = L"comboBox2";
-			this->comboBox2->Size = System::Drawing::Size(121, 21);
-			this->comboBox2->TabIndex = 26;
+			this->jurisdiccionTramAuto->FormattingEnabled = true;
+			this->jurisdiccionTramAuto->Location = System::Drawing::Point(16, 101);
+			this->jurisdiccionTramAuto->Name = L"jurisdiccionTramAuto";
+			this->jurisdiccionTramAuto->Size = System::Drawing::Size(121, 21);
+			this->jurisdiccionTramAuto->TabIndex = 26;
 			// 
-			// button3
+			// btnTramAutoEliminar
 			// 
-			this->button3->BackColor = System::Drawing::Color::Tomato;
-			this->button3->Location = System::Drawing::Point(445, 6);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(75, 23);
-			this->button3->TabIndex = 25;
-			this->button3->Text = L"Cancelar";
-			this->button3->UseVisualStyleBackColor = false;
+			this->btnTramAutoEliminar->BackColor = System::Drawing::Color::Tomato;
+			this->btnTramAutoEliminar->Location = System::Drawing::Point(445, 6);
+			this->btnTramAutoEliminar->Name = L"btnTramAutoEliminar";
+			this->btnTramAutoEliminar->Size = System::Drawing::Size(75, 23);
+			this->btnTramAutoEliminar->TabIndex = 25;
+			this->btnTramAutoEliminar->Text = L"Eliminar";
+			this->btnTramAutoEliminar->UseVisualStyleBackColor = false;
 			// 
-			// button2
+			// btnTramAutoEditar
 			// 
-			this->button2->BackColor = System::Drawing::Color::Khaki;
-			this->button2->Location = System::Drawing::Point(287, 6);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(75, 23);
-			this->button2->TabIndex = 24;
-			this->button2->Text = L"Editar";
-			this->button2->UseVisualStyleBackColor = false;
+			this->btnTramAutoEditar->BackColor = System::Drawing::Color::Khaki;
+			this->btnTramAutoEditar->Location = System::Drawing::Point(287, 6);
+			this->btnTramAutoEditar->Name = L"btnTramAutoEditar";
+			this->btnTramAutoEditar->Size = System::Drawing::Size(75, 23);
+			this->btnTramAutoEditar->TabIndex = 24;
+			this->btnTramAutoEditar->Text = L"Editar";
+			this->btnTramAutoEditar->UseVisualStyleBackColor = false;
 			// 
-			// button1
+			// btnTramAutoGuardar
 			// 
-			this->button1->BackColor = System::Drawing::Color::PaleGreen;
-			this->button1->Location = System::Drawing::Point(136, 6);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 23);
-			this->button1->TabIndex = 23;
-			this->button1->Text = L"Guardar";
-			this->button1->UseVisualStyleBackColor = false;
+			this->btnTramAutoGuardar->BackColor = System::Drawing::Color::PaleGreen;
+			this->btnTramAutoGuardar->Location = System::Drawing::Point(136, 6);
+			this->btnTramAutoGuardar->Name = L"btnTramAutoGuardar";
+			this->btnTramAutoGuardar->Size = System::Drawing::Size(75, 23);
+			this->btnTramAutoGuardar->TabIndex = 23;
+			this->btnTramAutoGuardar->Text = L"Guardar";
+			this->btnTramAutoGuardar->UseVisualStyleBackColor = false;
 			// 
-			// dataGridView1
+			// vistaTramAuto
 			// 
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(16, 219);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(504, 150);
-			this->dataGridView1->TabIndex = 22;
+			this->vistaTramAuto->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->vistaTramAuto->Location = System::Drawing::Point(16, 186);
+			this->vistaTramAuto->Name = L"vistaTramAuto";
+			this->vistaTramAuto->Size = System::Drawing::Size(504, 183);
+			this->vistaTramAuto->TabIndex = 22;
 			// 
 			// label3
 			// 
@@ -208,12 +218,12 @@ namespace Laboratorio42 {
 			this->label3->TabIndex = 21;
 			this->label3->Text = L"Fecha";
 			// 
-			// dateTimePicker1
+			// fechaInicioTramAuto
 			// 
-			this->dateTimePicker1->Location = System::Drawing::Point(162, 57);
-			this->dateTimePicker1->Name = L"dateTimePicker1";
-			this->dateTimePicker1->Size = System::Drawing::Size(200, 20);
-			this->dateTimePicker1->TabIndex = 20;
+			this->fechaInicioTramAuto->Location = System::Drawing::Point(162, 57);
+			this->fechaInicioTramAuto->Name = L"fechaInicioTramAuto";
+			this->fechaInicioTramAuto->Size = System::Drawing::Size(200, 20);
+			this->fechaInicioTramAuto->TabIndex = 20;
 			// 
 			// label2
 			// 
@@ -224,13 +234,13 @@ namespace Laboratorio42 {
 			this->label2->TabIndex = 19;
 			this->label2->Text = L"Id Cliente";
 			// 
-			// comboBox1
+			// IDCliTramAuto
 			// 
-			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(16, 57);
-			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(121, 21);
-			this->comboBox1->TabIndex = 18;
+			this->IDCliTramAuto->FormattingEnabled = true;
+			this->IDCliTramAuto->Location = System::Drawing::Point(16, 57);
+			this->IDCliTramAuto->Name = L"IDCliTramAuto";
+			this->IDCliTramAuto->Size = System::Drawing::Size(121, 21);
+			this->IDCliTramAuto->TabIndex = 18;
 			// 
 			// Automotor
 			// 
@@ -238,26 +248,26 @@ namespace Laboratorio42 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(532, 374);
 			this->Controls->Add(this->label7);
-			this->Controls->Add(this->dateTimePicker2);
+			this->Controls->Add(this->fechaFinTramAuto);
 			this->Controls->Add(this->label6);
-			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->valorTramAuto);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label4);
-			this->Controls->Add(this->comboBox3);
-			this->Controls->Add(this->comboBox2);
-			this->Controls->Add(this->button3);
-			this->Controls->Add(this->button2);
-			this->Controls->Add(this->button1);
-			this->Controls->Add(this->dataGridView1);
+			this->Controls->Add(this->juzgadoTramAuto);
+			this->Controls->Add(this->jurisdiccionTramAuto);
+			this->Controls->Add(this->btnTramAutoEliminar);
+			this->Controls->Add(this->btnTramAutoEditar);
+			this->Controls->Add(this->btnTramAutoGuardar);
+			this->Controls->Add(this->vistaTramAuto);
 			this->Controls->Add(this->label3);
-			this->Controls->Add(this->dateTimePicker1);
+			this->Controls->Add(this->fechaInicioTramAuto);
 			this->Controls->Add(this->label2);
-			this->Controls->Add(this->comboBox1);
+			this->Controls->Add(this->IDCliTramAuto);
 			this->Controls->Add(this->label1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"Automotor";
 			this->Text = L"Automotor";
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->vistaTramAuto))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

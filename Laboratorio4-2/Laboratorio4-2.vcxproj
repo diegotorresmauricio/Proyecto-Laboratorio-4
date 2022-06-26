@@ -123,29 +123,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Automotor.cpp" />
+    <ClCompile Include="Bdd.cpp" />
     <ClCompile Include="Clientes.cpp" />
+    <ClCompile Include="Empleado.cpp" />
     <ClCompile Include="Factura.cpp" />
-    <ClCompile Include="Inmobiliario.cpp" />
-    <ClCompile Include="Judicial.cpp" />
+    <ClCompile Include="Tramite.cpp" />
+    <ClCompile Include="Jurisdiccion.cpp" />
     <ClCompile Include="Juzgado.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Registro.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Automotor.h">
+    <ClInclude Include="Bdd.h" />
+    <ClInclude Include="Clientes.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Clientes.h">
+    <ClInclude Include="Empleado.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Factura.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Inmobiliario.h">
+    <ClInclude Include="Tramite.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Judicial.h">
+    <ClInclude Include="Jurisdiccion.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Juzgado.h">
@@ -159,20 +161,20 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Automotor.resx">
-      <DependentUpon>Automotor.h</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empleado.resx">
+      <DependentUpon>Empleado.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Factura.resx">
       <DependentUpon>Factura.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Inmobiliario.resx">
-      <DependentUpon>Inmobiliario.h</DependentUpon>
+    <EmbeddedResource Include="Tramite.resx">
+      <DependentUpon>Tramite.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Judicial.resx">
-      <DependentUpon>Judicial.h</DependentUpon>
+    <EmbeddedResource Include="Jurisdiccion.resx">
+      <DependentUpon>Jurisdiccion.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Juzgado.resx">
       <DependentUpon>Juzgado.h</DependentUpon>

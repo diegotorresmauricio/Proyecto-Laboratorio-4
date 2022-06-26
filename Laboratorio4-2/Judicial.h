@@ -35,21 +35,33 @@ namespace Laboratorio42 {
 			}
 		}
 	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::ComboBox^ comboBox1;
+	private: System::Windows::Forms::ComboBox^ IDCliTramJudicial;
+
 	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::DateTimePicker^ dateTimePicker1;
+	private: System::Windows::Forms::DateTimePicker^ fechaInicioTramJudicial;
+
+
+
 	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
-	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::Button^ button3;
-	private: System::Windows::Forms::ComboBox^ comboBox2;
-	private: System::Windows::Forms::ComboBox^ comboBox3;
+	private: System::Windows::Forms::DataGridView^ vistaTramJudicial;
+
+	private: System::Windows::Forms::Button^ btnTramJudGuardar;
+	private: System::Windows::Forms::Button^ btnTramJudEditar;
+	private: System::Windows::Forms::Button^ btnTramJudEliminar;
+	private: System::Windows::Forms::ComboBox^ jurisdiccionTramJudicial;
+	private: System::Windows::Forms::ComboBox^ juzgadoTramJudicial;
+
+
+
+
+
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Label^ label5;
-	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::TextBox^ valorTramJudicial;
+
 	private: System::Windows::Forms::Label^ label6;
-	private: System::Windows::Forms::DateTimePicker^ dateTimePicker2;
+	private: System::Windows::Forms::DateTimePicker^ fechaFinTramJudicial;
+
 	private: System::Windows::Forms::Label^ label7;
 	protected:
 
@@ -67,23 +79,23 @@ namespace Laboratorio42 {
 		void InitializeComponent(void)
 		{
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->IDCliTramJudicial = (gcnew System::Windows::Forms::ComboBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
+			this->fechaInicioTramJudicial = (gcnew System::Windows::Forms::DateTimePicker());
 			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
-			this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
+			this->vistaTramJudicial = (gcnew System::Windows::Forms::DataGridView());
+			this->btnTramJudGuardar = (gcnew System::Windows::Forms::Button());
+			this->btnTramJudEditar = (gcnew System::Windows::Forms::Button());
+			this->btnTramJudEliminar = (gcnew System::Windows::Forms::Button());
+			this->jurisdiccionTramJudicial = (gcnew System::Windows::Forms::ComboBox());
+			this->juzgadoTramJudicial = (gcnew System::Windows::Forms::ComboBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->valorTramJudicial = (gcnew System::Windows::Forms::TextBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->dateTimePicker2 = (gcnew System::Windows::Forms::DateTimePicker());
+			this->fechaFinTramJudicial = (gcnew System::Windows::Forms::DateTimePicker());
 			this->label7 = (gcnew System::Windows::Forms::Label());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->vistaTramJudicial))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// label1
@@ -95,13 +107,13 @@ namespace Laboratorio42 {
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Tramites judiciales";
 			// 
-			// comboBox1
+			// IDCliTramJudicial
 			// 
-			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(16, 59);
-			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(121, 21);
-			this->comboBox1->TabIndex = 1;
+			this->IDCliTramJudicial->FormattingEnabled = true;
+			this->IDCliTramJudicial->Location = System::Drawing::Point(16, 59);
+			this->IDCliTramJudicial->Name = L"IDCliTramJudicial";
+			this->IDCliTramJudicial->Size = System::Drawing::Size(121, 21);
+			this->IDCliTramJudicial->TabIndex = 1;
 			// 
 			// label2
 			// 
@@ -112,12 +124,12 @@ namespace Laboratorio42 {
 			this->label2->TabIndex = 2;
 			this->label2->Text = L"Id Cliente";
 			// 
-			// dateTimePicker1
+			// fechaInicioTramJudicial
 			// 
-			this->dateTimePicker1->Location = System::Drawing::Point(162, 59);
-			this->dateTimePicker1->Name = L"dateTimePicker1";
-			this->dateTimePicker1->Size = System::Drawing::Size(200, 20);
-			this->dateTimePicker1->TabIndex = 3;
+			this->fechaInicioTramJudicial->Location = System::Drawing::Point(162, 59);
+			this->fechaInicioTramJudicial->Name = L"fechaInicioTramJudicial";
+			this->fechaInicioTramJudicial->Size = System::Drawing::Size(200, 20);
+			this->fechaInicioTramJudicial->TabIndex = 3;
 			// 
 			// label3
 			// 
@@ -128,59 +140,59 @@ namespace Laboratorio42 {
 			this->label3->TabIndex = 4;
 			this->label3->Text = L"Fecha";
 			// 
-			// dataGridView1
+			// vistaTramJudicial
 			// 
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(16, 221);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(504, 150);
-			this->dataGridView1->TabIndex = 5;
+			this->vistaTramJudicial->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->vistaTramJudicial->Location = System::Drawing::Point(16, 187);
+			this->vistaTramJudicial->Name = L"vistaTramJudicial";
+			this->vistaTramJudicial->Size = System::Drawing::Size(504, 184);
+			this->vistaTramJudicial->TabIndex = 5;
 			// 
-			// button1
+			// btnTramJudGuardar
 			// 
-			this->button1->BackColor = System::Drawing::Color::PaleGreen;
-			this->button1->Location = System::Drawing::Point(136, 8);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 23);
-			this->button1->TabIndex = 6;
-			this->button1->Text = L"Guardar";
-			this->button1->UseVisualStyleBackColor = false;
+			this->btnTramJudGuardar->BackColor = System::Drawing::Color::PaleGreen;
+			this->btnTramJudGuardar->Location = System::Drawing::Point(136, 8);
+			this->btnTramJudGuardar->Name = L"btnTramJudGuardar";
+			this->btnTramJudGuardar->Size = System::Drawing::Size(75, 23);
+			this->btnTramJudGuardar->TabIndex = 6;
+			this->btnTramJudGuardar->Text = L"Guardar";
+			this->btnTramJudGuardar->UseVisualStyleBackColor = false;
 			// 
-			// button2
+			// btnTramJudEditar
 			// 
-			this->button2->BackColor = System::Drawing::Color::Khaki;
-			this->button2->Location = System::Drawing::Point(287, 8);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(75, 23);
-			this->button2->TabIndex = 7;
-			this->button2->Text = L"Editar";
-			this->button2->UseVisualStyleBackColor = false;
+			this->btnTramJudEditar->BackColor = System::Drawing::Color::Khaki;
+			this->btnTramJudEditar->Location = System::Drawing::Point(287, 8);
+			this->btnTramJudEditar->Name = L"btnTramJudEditar";
+			this->btnTramJudEditar->Size = System::Drawing::Size(75, 23);
+			this->btnTramJudEditar->TabIndex = 7;
+			this->btnTramJudEditar->Text = L"Editar";
+			this->btnTramJudEditar->UseVisualStyleBackColor = false;
 			// 
-			// button3
+			// btnTramJudEliminar
 			// 
-			this->button3->BackColor = System::Drawing::Color::Tomato;
-			this->button3->Location = System::Drawing::Point(445, 8);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(75, 23);
-			this->button3->TabIndex = 8;
-			this->button3->Text = L"Cancelar";
-			this->button3->UseVisualStyleBackColor = false;
+			this->btnTramJudEliminar->BackColor = System::Drawing::Color::Tomato;
+			this->btnTramJudEliminar->Location = System::Drawing::Point(445, 8);
+			this->btnTramJudEliminar->Name = L"btnTramJudEliminar";
+			this->btnTramJudEliminar->Size = System::Drawing::Size(75, 23);
+			this->btnTramJudEliminar->TabIndex = 8;
+			this->btnTramJudEliminar->Text = L"Eliminar";
+			this->btnTramJudEliminar->UseVisualStyleBackColor = false;
 			// 
-			// comboBox2
+			// jurisdiccionTramJudicial
 			// 
-			this->comboBox2->FormattingEnabled = true;
-			this->comboBox2->Location = System::Drawing::Point(16, 103);
-			this->comboBox2->Name = L"comboBox2";
-			this->comboBox2->Size = System::Drawing::Size(121, 21);
-			this->comboBox2->TabIndex = 9;
+			this->jurisdiccionTramJudicial->FormattingEnabled = true;
+			this->jurisdiccionTramJudicial->Location = System::Drawing::Point(16, 103);
+			this->jurisdiccionTramJudicial->Name = L"jurisdiccionTramJudicial";
+			this->jurisdiccionTramJudicial->Size = System::Drawing::Size(121, 21);
+			this->jurisdiccionTramJudicial->TabIndex = 9;
 			// 
-			// comboBox3
+			// juzgadoTramJudicial
 			// 
-			this->comboBox3->FormattingEnabled = true;
-			this->comboBox3->Location = System::Drawing::Point(162, 103);
-			this->comboBox3->Name = L"comboBox3";
-			this->comboBox3->Size = System::Drawing::Size(121, 21);
-			this->comboBox3->TabIndex = 10;
+			this->juzgadoTramJudicial->FormattingEnabled = true;
+			this->juzgadoTramJudicial->Location = System::Drawing::Point(162, 103);
+			this->juzgadoTramJudicial->Name = L"juzgadoTramJudicial";
+			this->juzgadoTramJudicial->Size = System::Drawing::Size(121, 21);
+			this->juzgadoTramJudicial->TabIndex = 10;
 			// 
 			// label4
 			// 
@@ -200,12 +212,12 @@ namespace Laboratorio42 {
 			this->label5->TabIndex = 12;
 			this->label5->Text = L"Juzgado";
 			// 
-			// textBox1
+			// valorTramJudicial
 			// 
-			this->textBox1->Location = System::Drawing::Point(16, 151);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(121, 20);
-			this->textBox1->TabIndex = 13;
+			this->valorTramJudicial->Location = System::Drawing::Point(16, 151);
+			this->valorTramJudicial->Name = L"valorTramJudicial";
+			this->valorTramJudicial->Size = System::Drawing::Size(121, 20);
+			this->valorTramJudicial->TabIndex = 13;
 			// 
 			// label6
 			// 
@@ -216,12 +228,12 @@ namespace Laboratorio42 {
 			this->label6->TabIndex = 14;
 			this->label6->Text = L"Valor";
 			// 
-			// dateTimePicker2
+			// fechaFinTramJudicial
 			// 
-			this->dateTimePicker2->Location = System::Drawing::Point(162, 151);
-			this->dateTimePicker2->Name = L"dateTimePicker2";
-			this->dateTimePicker2->Size = System::Drawing::Size(200, 20);
-			this->dateTimePicker2->TabIndex = 15;
+			this->fechaFinTramJudicial->Location = System::Drawing::Point(162, 151);
+			this->fechaFinTramJudicial->Name = L"fechaFinTramJudicial";
+			this->fechaFinTramJudicial->Size = System::Drawing::Size(200, 20);
+			this->fechaFinTramJudicial->TabIndex = 15;
 			// 
 			// label7
 			// 
@@ -238,26 +250,26 @@ namespace Laboratorio42 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(532, 374);
 			this->Controls->Add(this->label7);
-			this->Controls->Add(this->dateTimePicker2);
+			this->Controls->Add(this->fechaFinTramJudicial);
 			this->Controls->Add(this->label6);
-			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->valorTramJudicial);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label4);
-			this->Controls->Add(this->comboBox3);
-			this->Controls->Add(this->comboBox2);
-			this->Controls->Add(this->button3);
-			this->Controls->Add(this->button2);
-			this->Controls->Add(this->button1);
-			this->Controls->Add(this->dataGridView1);
+			this->Controls->Add(this->juzgadoTramJudicial);
+			this->Controls->Add(this->jurisdiccionTramJudicial);
+			this->Controls->Add(this->btnTramJudEliminar);
+			this->Controls->Add(this->btnTramJudEditar);
+			this->Controls->Add(this->btnTramJudGuardar);
+			this->Controls->Add(this->vistaTramJudicial);
 			this->Controls->Add(this->label3);
-			this->Controls->Add(this->dateTimePicker1);
+			this->Controls->Add(this->fechaInicioTramJudicial);
 			this->Controls->Add(this->label2);
-			this->Controls->Add(this->comboBox1);
+			this->Controls->Add(this->IDCliTramJudicial);
 			this->Controls->Add(this->label1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"Judicial";
 			this->Text = L"Judicial";
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->vistaTramJudicial))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
