@@ -9,6 +9,9 @@ ref class Bdd
 private:
 	String^ connectionString;
 	MySqlConnection^ conn;
+	MySqlDataReader^ myReader;
+
+	
 
 public:
 	Bdd();
@@ -28,6 +31,8 @@ public:
 	DataTable^ getIDTramite();
 	DataTable^ getTipoTramite();
 	DataTable^ getRubroTramite();
+
+	//void llenarComboCliente(String^);
 	
 	void abrirConexion();
 	void cerrarConexion();

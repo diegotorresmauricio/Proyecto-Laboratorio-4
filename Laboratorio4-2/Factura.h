@@ -295,6 +295,7 @@ namespace Laboratorio42 {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"Factura";
 			this->Text = L"Factura";
+			this->Load += gcnew System::EventHandler(this, &Factura::Factura_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridFactura))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->eventLog1))->EndInit();
 			this->ResumeLayout(false);
@@ -309,7 +310,8 @@ namespace Laboratorio42 {
 		this->data->cerrarConexion();
 	}
 
-	private: System::Void Cliente_Load(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void Factura_Load(System::Object^ sender, System::EventArgs^ e) {
+	
 		this->ConsultaFact();
 	}
 
@@ -365,5 +367,6 @@ namespace Laboratorio42 {
 		this->data->getIDFactura();
 		this->data->cerrarConexion();
 	}
+
 };
 }

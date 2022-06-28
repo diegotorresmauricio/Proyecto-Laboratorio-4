@@ -103,7 +103,7 @@ namespace Laboratorio42 {
 			this->btnJurisdiccionEliminar->Name = L"btnJurisdiccionEliminar";
 			this->btnJurisdiccionEliminar->Size = System::Drawing::Size(75, 23);
 			this->btnJurisdiccionEliminar->TabIndex = 27;
-			this->btnJurisdiccionEliminar->Text = L"Cancelar";
+			this->btnJurisdiccionEliminar->Text = L"Eliminar";
 			this->btnJurisdiccionEliminar->UseVisualStyleBackColor = false;
 			this->btnJurisdiccionEliminar->Click += gcnew System::EventHandler(this, &Jurisdiccion::btnJurisdiccionEliminar_Click);
 			// 
@@ -180,6 +180,7 @@ namespace Laboratorio42 {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"Jurisdiccion";
 			this->Text = L"Jurisdiccion";
+			this->Load += gcnew System::EventHandler(this, &Jurisdiccion::Jurisdiccion_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridJurisdiccion))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -192,7 +193,8 @@ namespace Laboratorio42 {
 		this->data->cerrarConexion();
 	}
 
-	private: System::Void Cliente_Load(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void Jurisdiccion_Load(System::Object^ sender, System::EventArgs^ e) {
+	
 		this->ConsultaJurisdiccion();
 	}
 
@@ -231,5 +233,6 @@ namespace Laboratorio42 {
 
 		this->ConsultaJurisdiccion();
 	}
+
 };
 }

@@ -123,7 +123,7 @@ namespace Laboratorio42 {
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(75, 23);
 			this->button3->TabIndex = 34;
-			this->button3->Text = L"Cancelar";
+			this->button3->Text = L"Eliminar";
 			this->button3->UseVisualStyleBackColor = false;
 			this->button3->Click += gcnew System::EventHandler(this, &Empleado::button3_Click);
 			// 
@@ -246,6 +246,7 @@ namespace Laboratorio42 {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"Empleado";
 			this->Text = L"Empleado";
+			this->Load += gcnew System::EventHandler(this, &Empleado::Empleado_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridEmpleados))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -259,7 +260,8 @@ namespace Laboratorio42 {
 		this->data->cerrarConexion();
 	}
 
-	private: System::Void Cliente_Load(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void Empleado_Load(System::Object^ sender, System::EventArgs^ e) {
+	
 		this->ConsultaEmple();
 	}
 
@@ -307,5 +309,6 @@ namespace Laboratorio42 {
 
 		this->ConsultaEmple();
 	}
+
 };
 }

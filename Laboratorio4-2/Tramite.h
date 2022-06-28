@@ -278,6 +278,7 @@ namespace Laboratorio42 {
 			// comboRubroTramite
 			// 
 			this->comboRubroTramite->FormattingEnabled = true;
+			this->comboRubroTramite->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Automotor", L"Judicial", L"Inmobiliario" });
 			this->comboRubroTramite->Location = System::Drawing::Point(241, 57);
 			this->comboRubroTramite->Name = L"comboRubroTramite";
 			this->comboRubroTramite->Size = System::Drawing::Size(121, 21);
@@ -287,6 +288,7 @@ namespace Laboratorio42 {
 			// comboTipoTramite
 			// 
 			this->comboTipoTramite->FormattingEnabled = true;
+			this->comboTipoTramite->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Alta", L"Baja", L"Transferencia" });
 			this->comboTipoTramite->Location = System::Drawing::Point(387, 57);
 			this->comboTipoTramite->Name = L"comboTipoTramite";
 			this->comboTipoTramite->Size = System::Drawing::Size(121, 21);
@@ -340,6 +342,7 @@ namespace Laboratorio42 {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"Inmobiliario";
 			this->Text = L"Inmobiliario";
+			this->Load += gcnew System::EventHandler(this, &Inmobiliario::Inmobiliario_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridTramites))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -352,7 +355,8 @@ namespace Laboratorio42 {
 		this->data->cerrarConexion();
 	}
 
-	private: System::Void Cliente_Load(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void Inmobiliario_Load(System::Object^ sender, System::EventArgs^ e) {
+	
 		this->ConsultaTramites();
 	}
 
@@ -421,5 +425,6 @@ namespace Laboratorio42 {
 
 		this->ConsultaTramites();
 	}
+
 };
 }

@@ -1,4 +1,5 @@
 #include "Bdd.h"
+
 using namespace std;
 
 Bdd::Bdd() {
@@ -9,7 +10,7 @@ Bdd::Bdd() {
 
 void Bdd::abrirConexion() {
 	this->conn->Open();
-} //linea con error al momento de ejecutar arroja una excepcion //SOLUCIONADO
+} 
 
 void Bdd::cerrarConexion() {
 	this->conn->Close();
@@ -34,6 +35,29 @@ DataTable^ Bdd::getIDCliente() {
 	data->Fill(tabla);
 	return tabla;
 }
+
+/*void Bdd::llenarComboCliente() {
+	String^ sql = "select * from cliente";
+	MySqlCommand^ cursor = gcnew MySqlCommand(sql, this->conn);
+	MySqlDataAdapter^ data = gcnew MySqlDataAdapter(cursor);
+	myReader;
+	try {
+		conn->Open();
+		myReader = cursor->ExecuteReader();
+
+		 while (myReader->Read()) {
+			String^ vIDCliente; 
+			vIDCliente = myReader->GetString("ID_Cliente");
+			comboIDCliente->Items->Add();
+		} 
+	}
+	catch (Exception^ e) {
+		using namespace System::Windows::Forms;
+		using namespace System::Data;
+		using namespace System::Drawing;
+		MessageBox::Show(e->Message);
+	}
+}*/
 
 void Bdd::insertarCliente(String^ nom, String^ ap, String^ mail, String^ dni, String^ tel) {
 	String^ sql = "insert into cliente(Nombre, Apellido, DNI, mail, telefono) values ('" + nom + "', '" + ap + "', '" + mail + "', '" + dni + "', '" + tel + "' )";

@@ -19,6 +19,7 @@ namespace Laboratorio42 {
 		Clientes(void)
 		{
 			InitializeComponent();
+			//llenarComboCliente();
 			//
 			//TODO: agregar código de constructor aquí
 			//
@@ -37,6 +38,7 @@ namespace Laboratorio42 {
 			}
 		}
 	private: Bdd^ data;
+	//private: Bdd^ llenarComboCliente;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::TextBox^ txtCliApellido;
@@ -179,7 +181,7 @@ namespace Laboratorio42 {
 			this->btnCliEliminar->Name = L"btnCliEliminar";
 			this->btnCliEliminar->Size = System::Drawing::Size(75, 23);
 			this->btnCliEliminar->TabIndex = 24;
-			this->btnCliEliminar->Text = L"Cancelar";
+			this->btnCliEliminar->Text = L"Eliminar";
 			this->btnCliEliminar->UseVisualStyleBackColor = false;
 			this->btnCliEliminar->Click += gcnew System::EventHandler(this, &Clientes::btnCliEliminar_Click);
 			// 
@@ -270,6 +272,7 @@ namespace Laboratorio42 {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"Clientes";
 			this->Text = L"Clientes";
+			this->Load += gcnew System::EventHandler(this, &Clientes::Clientes_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridCli))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -278,6 +281,11 @@ namespace Laboratorio42 {
 #pragma endregion
 	
 	private: System::Void comboIDCliente_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	/*	while (myReader->Read()) {
+			String^ vIDCliente;
+			vIDCliente = myReader->GetString("ID_Cliente");
+			comboIDCliente->Items->Add();
+		}*/
 		this->data->abrirConexion();
 		this->data->getIDCliente();
 		this->data->cerrarConexion();
@@ -289,7 +297,7 @@ namespace Laboratorio42 {
 		this->data->cerrarConexion();
 	}
 
-	private: System::Void Cliente_Load(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void Clientes_Load(System::Object^ sender, System::EventArgs^ e) {
 		this->ConsultaCli();
 	}
 
@@ -334,5 +342,7 @@ namespace Laboratorio42 {
 
 		this->ConsultaCli();
 	}
+
+
 };
 }

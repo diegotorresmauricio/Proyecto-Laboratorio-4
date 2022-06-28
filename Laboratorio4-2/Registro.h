@@ -175,7 +175,7 @@ namespace Laboratorio42 {
 			this->btnRegistroEliminar->Name = L"btnRegistroEliminar";
 			this->btnRegistroEliminar->Size = System::Drawing::Size(75, 23);
 			this->btnRegistroEliminar->TabIndex = 24;
-			this->btnRegistroEliminar->Text = L"Cancelar";
+			this->btnRegistroEliminar->Text = L"Eliminar";
 			this->btnRegistroEliminar->UseVisualStyleBackColor = false;
 			this->btnRegistroEliminar->Click += gcnew System::EventHandler(this, &Registro::btnRegistroEliminar_Click);
 			// 
@@ -250,6 +250,7 @@ namespace Laboratorio42 {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"Registro";
 			this->Text = L"Registro";
+			this->Load += gcnew System::EventHandler(this, &Registro::Registro_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridRegistro))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -262,7 +263,8 @@ namespace Laboratorio42 {
 		this->data->cerrarConexion();
 	}
 
-	private: System::Void Cliente_Load(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void Registro_Load(System::Object^ sender, System::EventArgs^ e) {
+	
 		this->ConsultaRegistro();
 	}
 	
@@ -313,5 +315,6 @@ namespace Laboratorio42 {
 
 		this->ConsultaRegistro();
 	}
+
 };
 }

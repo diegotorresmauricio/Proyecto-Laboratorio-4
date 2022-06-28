@@ -114,7 +114,7 @@ namespace Laboratorio42 {
 			this->btnJuzgaEliminar->Name = L"btnJuzgaEliminar";
 			this->btnJuzgaEliminar->Size = System::Drawing::Size(75, 23);
 			this->btnJuzgaEliminar->TabIndex = 11;
-			this->btnJuzgaEliminar->Text = L"Cancelar";
+			this->btnJuzgaEliminar->Text = L"Eliminar";
 			this->btnJuzgaEliminar->UseVisualStyleBackColor = false;
 			this->btnJuzgaEliminar->Click += gcnew System::EventHandler(this, &Juzgado::btnJuzgaEliminar_Click);
 			// 
@@ -247,6 +247,7 @@ namespace Laboratorio42 {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"Juzgado";
 			this->Text = L"Juzgado";
+			this->Load += gcnew System::EventHandler(this, &Juzgado::Juzgado_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridJuzgados))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -260,7 +261,8 @@ namespace Laboratorio42 {
 		this->data->cerrarConexion();
 	}
 
-	private: System::Void Cliente_Load(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void Juzgado_Load(System::Object^ sender, System::EventArgs^ e) {
+	
 		this->ConsultaJuzgado();
 	}
 	
@@ -311,5 +313,6 @@ namespace Laboratorio42 {
 
 		this->ConsultaJuzgado();
 	}
+
 };
 }
